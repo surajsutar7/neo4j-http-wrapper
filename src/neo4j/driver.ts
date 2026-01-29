@@ -12,16 +12,20 @@ export function getDriver(): Driver {
         config.neo4j.password
       ),
       {
+        // 🔥 Connection Pooling Config
         maxConnectionPoolSize: 50,
-        connectionAcquisitionTimeout: 30000, // 30s
+        connectionAcquisitionTimeout: 30000, // ms
         maxConnectionLifetime: 60 * 60 * 1000 // 1 hour
       }
     );
+
+    console.log("✅ Neo4j driver initialized with pooling");
   }
+
   return driver;
 }
 
-export async function closeDriver() {
+export async function closeDriver(): Promise<void> {
   if (driver) {
     await driver.close();
     driver = null;

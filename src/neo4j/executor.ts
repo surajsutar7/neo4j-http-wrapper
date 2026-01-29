@@ -9,7 +9,9 @@ export async function runQuery(
   try {
     const result = await session.run(query, params);
     return result.records.map(r => r.toObject());
+  } catch (err) {
+    throw err;
   } finally {
-    await session.close();
+    await session.close(); // 🔥 VERY IMPORTANT
   }
 }
