@@ -1,7 +1,7 @@
 {
   "name": "neo4j-http-wrapper",
   "version": "0.1.0",
-  "description": "HTTP wrapper around Neo4j official driver",
+  "description": "HTTP wrapper for Neo4j with API key authentication, connection pooling, health check, and Swagger docs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -34,6 +34,7 @@
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }
