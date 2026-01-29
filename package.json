@@ -1,0 +1,28 @@
+{
+  "name": "neo4j-http-wrapper",
+  "version": "0.1.0",
+  "description": "HTTP wrapper around Neo4j official driver",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsup src/index.ts --dts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "neo4j",
+    "neo4j-driver",
+    "cypher",
+    "graph-database",
+    "http-api"
+  ],
+  "author": "Suraj Sutar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "neo4j-driver": "^5.15.0",
+    "dotenv": "^16.4.0"
+  }
+}
